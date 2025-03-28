@@ -6,6 +6,10 @@ from transformers.data.data_collator import tolist
 
 app = fastapi.FastAPI()
 
+@app.get("/")
+def health():
+    return {"status": "healthy"}
+
 
 @app.get("/predict")
 def predict():

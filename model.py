@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from sklearn import linear_model
+from sklearn.linear_model import LinearRegression
 import pickle
 
 df = pd.read_csv(
@@ -8,7 +8,7 @@ df = pd.read_csv(
 
 #df.bedrooms = df.bedrooms.fillna(df.bedrooms.median())
 
-reg = linear_model.LinearRegression()
+reg = LinearRegression()
 
 # dropping the irrelevant columns in the multivariate dataset
 reg.fit(df.drop(['price', 'hotwaterheating',
